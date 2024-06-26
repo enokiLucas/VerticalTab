@@ -1,3 +1,6 @@
+import { loadHTML } from './utils/HTMLLoader.js';
+import { loadStyles } from './utils/StyleLoader.js';
+
 class VerticalTabsPanel extends HTMLElement {
 	constructor() {
 		super();
@@ -5,23 +8,9 @@ class VerticalTabsPanel extends HTMLElement {
 	}
 
 	async connectedCallback() {
-		await this.loadHTML(this.shadowRoot, './VerticalTabsPanel.html');
-		await this.loadStyles(this.shadowRoot, './styles.css');
+		await loadHTML(this.shadowRoot, './VerticalTabsPanel.html');
+		await loadStyles(this.shadowRoot, './styles.css');
 		this.switchTabs();
-	}
-
-	//Loads the HTML copied from utils/HTMLLoader.js
-	async loadHTML(shadowRoot, htmlPath) {
-		const html = await fetch(htmlPath).then(response => response.text());
-		shadowRoot.innerHTML = html;
-	}
-
-	//Loads the styles, copied from utils/StyleLoader.js
-	async loadStyles(shadowRoot, stylePath) {
-		const css = await fetch(stylePath).then(response => response.text());
-		const style = document.createElement('style');
-		style.textContent = css;
-		shadowRoot.appendChild(style);
 	}
 
 	switchTabs() {
