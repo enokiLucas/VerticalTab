@@ -45,21 +45,21 @@ h3 {
 	padding: 1em 1.5em;
 }
 
-.tab-content h4 {
+h4 {
 	font-size: 1.8em;
 	margin-bottom: 0.5em;
 	color: #000024;
 	font-weight: 600;
 }
 
-.tab-content p {
+p {
 	text-align: justify;
 	line-height: 1.9;
 	letter-spacing: 0.4px;
 	color: #202238;
 }
 
-.tab-content div {
+.custom-tab {
 	display: none;
 }
 

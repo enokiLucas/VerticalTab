@@ -15,7 +15,7 @@ class VerticalTabsPanel extends HTMLElement {
 
 	switchTabs() {
 		const tabs = this.shadowRoot.querySelectorAll(".tabs h3");
-		const tabContents = this.shadowRoot.querySelectorAll(".tab-content div");
+		const tabContents = this.shadowRoot.querySelectorAll(".tab-content .custom-tab");
 
 		tabs.forEach((tab, index) => {
 			tab.addEventListener("click", () => {
